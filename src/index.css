@@ -38,9 +38,25 @@ header {
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   height: 300px;
   width: 200px;
   background: green;
+
+}
+
+.close {
+  position: relative;
+  left: 90px;
+}
+
+.imgHolder {
+  width: 170px;
+  height: 200px;
+  background: red;
 }
 
 button {
