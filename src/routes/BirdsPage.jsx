@@ -1,8 +1,13 @@
-import Card from "../components/Card";
-function BirdsPage({ removeCard, searchHandler, likesCounter, animalsList, search }) {
+/* import { useState } from 'react' */
+import { Link } from 'react-router-dom'
+import Card from "../components/Card"
+import pic2 from '../assets/giraffe123.jpg';
+//if params equals animals use animals. if birds use birds
+function BirdsPage({ removeCard, searchHandler, likesCounter, zoo, originalZoo, search }) {
     return (
         <>
             <main>
+                <Link to="/" onClick={() => originalZoo()}><img className="animalLink" src={pic2} alt="giraffe" /></Link>
                 <div className="searchHolder">
                     <p>Search:</p>
                     <div className="searchBar">
@@ -10,10 +15,9 @@ function BirdsPage({ removeCard, searchHandler, likesCounter, animalsList, searc
                     </div>
                 </div>
                 <div className="cards">
-                    {animalsList
-                        .filter((animal) =>
-                            animal.name.toLowerCase().startsWith(search.toLowerCase())
-                        )
+                    {zoo.filter((animal) =>
+                        animal.name.toLowerCase().startsWith(search.toLowerCase())
+                    )
                         .map((animal) => (
                             <Card
                                 key={animal.name}
@@ -29,5 +33,4 @@ function BirdsPage({ removeCard, searchHandler, likesCounter, animalsList, searc
         </>
     )
 }
-
 export default BirdsPage;
