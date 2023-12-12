@@ -64,11 +64,7 @@ function App() {
     });
     setZoo(updatedArray);
   };
-  const searchRes = (filteredAnimalsList) => {
-    if (filteredAnimalsList.length === 0) {
-      return "Animal not found";
-    }
-  };
+
   const router = createBrowserRouter([
     {
       path: '/', element: <Root />,
@@ -98,9 +94,7 @@ function App() {
 
   ])
   return (
-    <>
-      <RouterProvider router={router} />
-    </>
+    <RouterProvider router={router} />
   )
 }
 
