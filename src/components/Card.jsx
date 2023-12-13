@@ -12,7 +12,7 @@ const Card = (props) => {
             <p id="likesHolder">{props.likes}</p>
             <div className="buttons">
                 <button id="minus" onClick={props.dislikesUpdate}>-</button>
-                <img id="heart" src={props.likes < 0 ? brokenheart : heart} />
+                <img id="heart" alt="heart" src={props.likes < 0 ? brokenheart : heart} />
                 <button id="plus" onClick={props.likesUpdate}>+</button>
             </div>
         </div>
