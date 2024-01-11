@@ -1,7 +1,6 @@
 import Card from "../components/Card"
-import { Routes, Route, useParams, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import pic2 from '../assets/giraffe123.jpg';
-//if params equals animals use animals. if birds use birds
 function AnimalsPage({ removeCard, searchHandler, likesCounter, originalZoo, zoo, search }) {
     return (
         <main>

@@ -1,21 +1,22 @@
-import { Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import pic from '../assets/owl-50267_1280.jpg'
 import pic2 from '../assets/giraffe123.jpg'
-function Home({ changeZoo, changeZoo2 }) {
-    /* const { animals, birds } = zoo; */
-
+function Home({ resetSearch }) {
     return (
         <main>
             <div className="welcome">
-                <h1>Welcome</h1>
-                <p>Blue pill or red pill</p>
+                <div className='txtHolder'>
+
+                    <h1>Welcome to Zoo</h1>
+                    <p>Pick one category and get ready to see some wildlife!</p>
+                </div>
                 <div className="picLinkHolder">
                     <div className="picAtxt">
-                        <Link to="./Animals" onClick={() => changeZoo()}><img className="animalLink" src={pic2} alt="giraffe" /></Link>
+                        <NavLink to="/animals" onClick={() => resetSearch()}><img className="animalLink" src={pic2} alt="giraffe" /></NavLink>
                         <p>Animals</p>
                     </div>
                     <div className="picAtxt">
-                        <Link to="./Birds" onClick={() => changeZoo2()}><img className="animalLink" src={pic} alt="owl" /></Link>
+                        <NavLink to="/birds" onClick={() => resetSearch()}><img className="animalLink" src={pic} alt="owl" /></NavLink>
                         <p>Birds</p>
                     </div>
                 </div>
@@ -23,5 +24,4 @@ function Home({ changeZoo, changeZoo2 }) {
         </main>
     )
 }
-
 export default Home;

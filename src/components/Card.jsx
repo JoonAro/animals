@@ -1,11 +1,15 @@
+import { Link } from 'react-router-dom';
 import heart from '../assets/heart.png'
 import brokenheart from '../assets/heartbreak.png'
 const Card = (props) => {
+    const animalOrBird = props.category;
     return (
-        <div className="card">
+        <div className={animalOrBird === "animals" ? "card" : "birdCard"}>
             <button id="closeButton" onClick={props.click}>&times;</button>
-            <h2>{props.title}</h2>
-            <div className="imageHolder">
+            <Link to={props.title}>
+                <h2>{props.title}</h2>
+            </Link>
+            <div>
                 <img id="animalpic" src={`https://source.unsplash.com/400x400/?${props.title}`} alt="animal pic"
                 />
             </div>
@@ -18,5 +22,4 @@ const Card = (props) => {
         </div>
     )
 }
-
 export default Card;
