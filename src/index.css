@@ -2,6 +2,8 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  --animals-green: #0c4000;
+  --birds-orange: #af7201;
   color: rgba(255, 255, 255, 0.87);
   background-color: #222222;
   font-synthesis: none;
@@ -56,7 +58,6 @@ main {
   width: 800px;
   background-color: orange;
   align-items: center;
-  /* justify-content: center; */
   border-radius: 50%;
   transition: background-color 1s ease;
 }
@@ -163,7 +164,7 @@ h2 {
   align-items: center;
   height: 450px;
   width: 360px;
-  background-color: rgb(12, 64, 0);
+  background-color: var(--animals-green);
   border-radius: 10px;
 }
 
@@ -174,7 +175,7 @@ h2 {
   align-items: center;
   height: 450px;
   width: 360px;
-  background-color: rgb(175, 114, 1);
+  background-color: var(--birds-orange);
   border-radius: 10px;
 }
 
@@ -254,7 +255,7 @@ button {
 
 #backButton {
   position: relative;
-  top: -50px;
+  top: -85px;
   background-color: orange;
   border: 1px black solid;
 }
@@ -273,13 +274,25 @@ button:focus-visible {
 }
 
 .singlePage {
+  margin: 60px 0 0 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   height: 700px;
   width: 100%;
-  background: rgb(175, 114, 1);
+  background: var(--birds-orange);
+}
+
+.singlePageAnimals {
+  margin: 60px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 700px;
+  width: 100%;
+  background: var(--animals-green);
 }
 
 .limitWidth {

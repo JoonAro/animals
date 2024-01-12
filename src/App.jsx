@@ -11,6 +11,7 @@ function App() {
     birds: birds,
   });
   const [search, setSearch] = useState("");
+  //removeCard filters the array. It takes every creature that does not match the name of the card clicked and returns them to the array.
   const removeCard = (name, category) => {
     const updateArrayBin = zoo[category].filter((creature) => creature.name !== name);
     setZoo({ ...zoo, [category]: updateArrayBin });
@@ -21,6 +22,7 @@ function App() {
   const resetSearch = () => {
     setSearch("");
   }
+  //likesCounter is redefined at categoryPage to likesCounter and dislikesCounter. There it is given the event add or remove. This removes the need for two functions.
   const likesCounter = (animalData, event, category) => {
     const updatedArray = zoo[category].map((creature) => {
       if (creature.name == animalData && event === "add") {

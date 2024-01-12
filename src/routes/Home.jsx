@@ -1,6 +1,7 @@
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import pic from '../assets/owl-50267_1280.jpg'
 import pic2 from '../assets/giraffe123.jpg'
+//In Navlink we give the :categories path a value which you can then use with useParams in the categoryPage to filter the array.
 function Home({ resetSearch }) {
     return (
         <main>
