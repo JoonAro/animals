@@ -1,6 +1,5 @@
 import Card from "../components/Card"
 import { useParams } from 'react-router-dom';
-import pic2 from '../assets/giraffe123.jpg';
 //if params equals  use animals. if birds use birds
 function CategoryPage(props) {
     const params = useParams();

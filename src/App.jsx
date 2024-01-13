@@ -11,6 +11,7 @@ function App() {
     birds: birds,
   });
   const [search, setSearch] = useState("");
+
   //removeCard filters the array. It takes every creature that does not match the name of the card clicked and returns them to the array.
   const removeCard = (name, category) => {
     const updateArrayBin = zoo[category].filter((creature) => creature.name !== name);
