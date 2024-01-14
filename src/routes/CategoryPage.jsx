@@ -5,9 +5,6 @@ function CategoryPage(props) {
     const params = useParams();
     const category = params.categories;
     const animalOrBird = category.toString().slice(0, -1);
-    console.log("category", category);
-    console.log("props", props);
-    console.log("params", params);
     return (
         <main>
             <div className="searchHolder">

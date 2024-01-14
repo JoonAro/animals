@@ -3,11 +3,12 @@ import heart from '../assets/heart.png'
 import brokenheart from '../assets/heartbreak.png'
 const Card = (props) => {
     const animalOrBird = props.category;
+    const creatureName = props.title.charAt(0).toUpperCase() + props.title.slice(1);
     return (
         <div className={animalOrBird === "animals" ? "card" : "birdCard"}>
             <button id="closeButton" onClick={props.click}>&times;</button>
             <Link to={props.title}>
-                <h2>{props.title}</h2>
+                <h2>{creatureName}</h2>
             </Link>
             <div>
                 <img id="animalpic" src={`https://source.unsplash.com/400x400/?${props.title}`} alt="animal pic"

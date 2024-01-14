@@ -5,13 +5,14 @@ const SinglePage = ({ zoo, resetSearch }) => {
     const params = useParams();
     const navigate = useNavigate();
     const data = zoo[params.categories].find((el) => el.name === params.name)
+    const creatureName = data.name.charAt(0).toUpperCase() + data.name.slice(1);
     const animalOrBird = params.categories.toString().slice(0, -1);
     const activity = animalOrBird === "animal" ? "moves" : "flies";
-    const colorOfButton = animalOrBird === "animal" ? "green" : "#orange";
+    const colorOfButton = animalOrBird === "animal" ? "orange" : "#orange";
     return (
-        <div className={animalOrBird === "animal" ? "singlePageAnimals" : "singlePage"}>
+        <div className={`singlePage${animalOrBird === "animal" ? " animals" : ""}`}>
             <button id="backButton" style={{ backgroundColor: colorOfButton }} onMouseDown={() => resetSearch()} onClick={() => navigate(-1)}>Back to {params.categories}</button>
-            <h2>{data.name}</h2>
+            <h2>{creatureName}</h2>
             <div>
                 <img id="animalpic" src={`https://source.unsplash.com/400x400/?${data.name}`} alt="animal pic"
                 />
@@ -21,7 +22,7 @@ const SinglePage = ({ zoo, resetSearch }) => {
                 <img id="heart" alt="heart" src={data.likes < 0 ? brokenheart : heart} />
             </div>
             <div className="limitWidth">
-                <p>{data.name.charAt(0).toUpperCase() + data.name.slice(1)} is a marvelous {animalOrBird} with many wonderful quirks. It usually {activity} around it's habitat looking for food and a potential mate.</p>
+                <p>{creatureName} is a marvelous {animalOrBird} with many wonderful quirks. It usually {activity} around it's habitat looking for food and a potential mate.</p>
             </div>
         </div >
     )
